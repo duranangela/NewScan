@@ -1,0 +1,14 @@
+<section class='main-page'>
+  <div class='topic'>
+  </div>
+  <div class='date'>
+  </div>
+  <div class='articles'>
+    <% @presenter.articles.each do |article| %>
+      <div class='article'>
+        <p><%= article[0] %></p>
+        <p><%= link_to article[1], article[2] %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

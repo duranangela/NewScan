@@ -7,7 +7,7 @@
     <% @presenter.articles.each do |article| %>
       <div class='article'>
         <p><%= article[0] %></p>
-        <p><%= link_to article[1], article[2] %></p>
+        <p><%= link_to article[1], article[2] %> <br> <%= article[4]  %>  </p>
         <p><%= article[3] %></p>
       </div>
     <% end %>

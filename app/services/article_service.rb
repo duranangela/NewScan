@@ -8,7 +8,7 @@ class ArticleService
   def articles
     articles = JSON.parse(response.body, symbolize_names: true)[:articles]
     articles = articles.map do |article|
-      article = [article[:title], article[:source][:name], article[:url], article[:description]]
+      article = [article[:title], article[:source][:name], article[:url], article[:description], article[:publishedAt]]
       article
     end
     articles

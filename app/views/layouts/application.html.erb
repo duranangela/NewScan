@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav>
+      <div class='main-title'>
+        <h1><%= link_to "NewScan", root_path %></h1>
+        <h2>All the news you want to read in one place</h2>
+      </div>
+    </nav>
     <%= yield %>
+    <footer>
+      <h3>Powered by NewsAPI</h3>
+      <h3><%= link_to "See the News Sources used!", "https://newsapi.org/sources" %></h3>
+    </footer>
   </body>
 </html>

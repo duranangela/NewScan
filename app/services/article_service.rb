@@ -2,14 +2,19 @@ require 'date'
 
 class ArticleService
 
-  def initialize
+  def initialize(topic, from_date=(Date.today - 3), to_date=Date.today)
+    @topic = topic
+    @from_date = from_date
+    @to_date = to_date
   end
 
   def articles
     articles = JSON.parse(response.body, symbolize_names: true)[:articles]
-    articles = articles.map do |article|
-      article = [article[:title], article[:source][:name], article[:url], article[:description], article[:publishedAt]]
-      article
+    if articles
+      articles = articles.map do |article|
+        article = [article[:title], article[:source][:name], article[:url], article[:description], article[:publishedAt]]
+        article
+      end
     end
     articles
   end
@@ -20,9 +25,10 @@ class ArticleService
 
   def params
     {
-      q: 'election',
+      q: @topic,
       sortBy: 'publishedAt',
-      from: date,
+      from: @from_date,
+      to: @to_date,
       apiKey: ENV['API_KEY']
     }
   end

@@ -1,15 +1,13 @@
 <section class='main-page'>
-  <div class='topic'>
-  </div>
-  <div class='date'>
-  </div>
   <div class='articles'>
-    <% @presenter.articles.each do |article| %>
-      <div class='article'>
-        <p><%= article[0] %></p>
-        <p><%= link_to article[1], article[2] %> <br> <%= article[4]  %>  </p>
-        <p><%= article[3] %></p>
-      </div>
+    <% if !@presenter.articles.nil? %>
+      <% @presenter.articles.each do |article| %>
+        <div class='article'>
+          <p><%= article[0] %></p>
+          <p><%= link_to article[1], article[2] %> <br> <%= article[4]  %>  </p>
+          <p><%= article[3] %></p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </section>

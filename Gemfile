@@ -28,6 +28,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'active_model_serializers', "~> 0.10.0"
 gem 'factory_bot_rails'
+gem 'bootstrap-datepicker-rails'
 
 
 # Use ActiveStorage variant

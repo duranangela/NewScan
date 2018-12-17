@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -16,11 +17,13 @@
         <h1><%= link_to "NewScan", root_path %></h1>
         <h2>All the news you want to read in one place</h2>
       </div>
+      <div class='log-in'>
+      </div>
     </nav>
     <%= yield %>
     <footer>
       <h3>Powered by NewsAPI</h3>
-      <h3><%= link_to "See the News Sources used!", "https://newsapi.org/sources" %></h3>
+      <h3><%= link_to "See the News Sources", "https://newsapi.org/sources" %></h3>
     </footer>
   </body>
 </html>

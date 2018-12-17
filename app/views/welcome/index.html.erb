@@ -1,17 +1,26 @@
 <section class ='inputs'>
+  <div class='input-form'>
   <%= form_tag("/index", method: "get") do %>
+    <div class='form'>
     <%= label_tag(:topic, "Topic") %>
     <%= text_field_tag (:topic), nil, value: @topic %>
-
+    </div>
+    <div class='form'>
     <%= label_tag(:from_date, "From") %>
     <%= text_field_tag (:from_date), nil, data:{ provide: 'datepicker', date_format: "M dd, yyyy"}, value: @from_date.to_date.strftime("%b %d, %Y") %>
-
+    </div>
+    <div class='form'>
     <%= label_tag(:to_date, "To") %>
     <%= text_field_tag (:to_date), nil, data:{ provide: 'datepicker', date_format: "M dd, yyyy"}, value: @to_date.to_date.strftime("%b %d, %Y") %>
-
+    </div>
+    <div class='form'>
     <%= submit_tag("Search for Articles") %>
+    </div>
   <% end %>
-  <%= link_to "Clear input", root_path %>
+  </div>
+  <div>
+  <%= button_to "Clear input", root_path, method: :get %>
+  </div>
 </section>
 
 <script>
@@ -20,7 +29,7 @@
   });
 </script>
 
-<section class='main-page'>
+<section class='main-articles'>
   <div class='articles'>
     <% if !@presenter.articles.nil? %>
       <% @presenter.articles.each do |article| %>

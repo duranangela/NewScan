@@ -31,6 +31,12 @@ nav h2 {
 
 .form {
   height: 25px;
+  text-align: right;
+  margin: 8px;
+}
+
+.input-button {
+  height: 25px;
   text-align: center;
   margin: 8px;
 }
